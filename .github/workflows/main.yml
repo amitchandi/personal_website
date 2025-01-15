@@ -25,20 +25,13 @@ jobs:
           # Checkout a specific branch
           ref: main
 
-      # This is a composite GitHub Action (Linux runner) 
-      # for deploying repository content to remote server
-      - name: SFTP-Deploy-Action
-        uses: milanmk/actions-file-deployer@master
+      - name: Simple SFTP
+      # You may pin to the exact commit or the version.
+      # uses: Atyn/simple-sftp-action@a684a17fdd2b79d23101d568d9e8b5070f58e685
+        uses: Atyn/simple-sftp-action@0.0.2
         with:
-          remote-protocol: sftp
-
-          # Credentials for SFTP access to server using GitHub secrets
-          remote-host: ${{ secrets.FTP_HOST }}
-          remote-user: ${{ secrets.FTP_USER }}
-          remote-password: ${{ secrets.FTP_PASSWORD }}
-
-          # Path for specific folder on server for files deployment
-          remote-path: /
-
-          # Port for SFTP access to server
-          remote-port: 21
+          # URL to the SFTP server. Example: sftp://USERNAME:PASSWORD@example.com/remote-directory
+          url: sftp://amitchandi:tjVnEn#k!1Oa64m@147.185.242.125
+          # The directory that should be uploaded
+          #localdir: # optional
+          
