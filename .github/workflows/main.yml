@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
 
           # Checkout a specific branch
-          ref: test-branch
+          ref: main
 
       # This is a composite GitHub Action (Linux runner) 
       # for deploying repository content to remote server
