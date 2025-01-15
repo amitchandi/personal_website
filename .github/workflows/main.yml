@@ -41,4 +41,4 @@ jobs:
           remote-path: /
 
           # Port for SFTP access to server
-          remote-port: 221
+          remote-port: 21
