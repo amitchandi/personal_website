@@ -1,0 +1,47 @@
+name: Publish
+on: [push]
+jobs:
+  # This workflow contains a single job called "SFTP-Deploy-Action"
+  SFTP-Deploy-Action:
+    name: SFTP-Deploy-Action
+
+    # The type of runner that the job will run on 
+    # (depends on server but usually this value is works)
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks 
+    # that will be executed as part of the job
+    steps:
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, 
+      # so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+
+          # Fetch all history for all tags and branches
+          fetch-depth: 0
+
+          # Checkout a specific branch
+          ref: main
+
+      - name: SFTP Transfer
+        # You may pin to the exact commit or the version.
+        # uses: danhendrickson/sftp-transfer-action@531b97c11ad67e7e242e2cf98cb16c3849544f58
+        uses: danhendrickson/sftp-transfer-action@v2023.51.2
+        with:
+          # Server name secret
+          server: 147.185.242.125
+          # Username secret
+          user: amitchandi
+          # Password secret
+          pass: tjVnEn#k!1Oa64m
+          # Port
+          #port: # default is 22
+          # Local Path
+          #local-path: # default is /
+          # Remote Path
+          #remote-path: # default is /
+            
+          
+          
