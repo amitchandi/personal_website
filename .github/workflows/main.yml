@@ -18,4 +18,5 @@ jobs:
     steps:
       - name: Pull Project
         run: |
-          cd /home/amitchandi/ && git pull origin main
+          git pull origin main
+#          cd /home/amitchandi/ && git pull origin main
