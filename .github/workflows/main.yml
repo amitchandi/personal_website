@@ -18,4 +18,4 @@ jobs:
     steps:
       - name: Pull Project
         run: |
-          cd /var/www/html &&  git pull origin main
+         git pull origin main && cp ./* /var/www/html/
