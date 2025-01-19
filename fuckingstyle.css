@@ -20,9 +20,17 @@ h1,h2,h3 {
     margin:auto;
     color:#fff;
     line-height:50px;
-    text-align:center
-    
-  }
+    text-align:center    
+}
+
+ul {
+    -moz-column-count: 2;
+    -moz-column-gap: 60px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 60px;
+    column-count: 2;
+    column-gap: 60px;
+}
 
 @media (prefers-color-scheme: dark) {
     body {
