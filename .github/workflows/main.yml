@@ -19,3 +19,10 @@ jobs:
       - name: Pull Project
         run: |
          rm -f /var/www/deploy/* && git pull origin main && cp ./* /var/www/deploy/
+      # Deploy to live folder using deploy.sh
+      - name: Deploy to live site
+        run: sudo /usr/local/bin/deploy.sh
+
+      # Optional: send Discord notification
+      - name: Notify deployment
+        run: /usr/local/bin/monit-discord.sh "Website deployed successfully" 
